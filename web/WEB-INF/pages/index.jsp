@@ -1,8 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script>
         $(document).ready(function () {
             $('td').on('click', function (e) {
@@ -47,11 +48,16 @@
 </head>
 <body>
 <form method="POST" action="/move" modelAttribute="player">
+    <span style="float: right">
+    <a href="?lang=en">en</a>
+    <a href="?lang=ru">ru</a>
+    </span>
     <input type="hidden" id="hidden_tr" name="hidden_tr">
     <input type="hidden" id="hidden_td" name="hidden_td">
     <table align="center">
+
         <tr id="0">
-            <td class="0"><img src="${src00}" class="img"/></td>
+            <td class="0"><img src="${src00}"/></td>
             <td class="1"><img src="${src01}"/></td>
             <td class="2"><img src="${src02}"/></td>
         </tr>
@@ -68,7 +74,7 @@
     </table>
     <p align="center">${message}</p>
 </form>
-<form method="GET" action="/" >
+<form method="GET" action="/">
     <p align="center"><input type="submit" value="Начать заново" class="button"></p>
 </form>
 </body>
